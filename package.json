@@ -1,0 +1,22 @@
+{
+  "name": "node-flic-buttons",
+  "version": "0.0.1",
+  "description": "Node to read events from Shortcut Labs Flic buttons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flic",
+    "ble",
+    "buttons"
+  ],
+  "author": {
+    "email": "hardillb@gmail.com",
+    "name" : "Ben Hardill"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "protobufjs": "~4.1.2"
+  }
+}

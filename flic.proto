@@ -1,0 +1,165 @@
+package flic.protocol;
+
+message Message {
+    enum MessageType {
+	MessageTypeInitializeClient = 0;
+	MessageTypeOnButtonDiscover = 1;
+	MessageTypeOnButtonConnecting = 2;
+	MessageTypeOnButtonConnect = 3;
+	MessageTypeOnButtonReady = 4;
+	MessageTypeOnButtonDisconnecting = 5;
+	MessageTypeOnButtonDisconnect = 6;
+	MessageTypeOnButtonConnectionFail = 7;
+	MessageTypeOnButtonUpOrDown = 8;
+	MessageTypeOnButtonClickOrHold = 9;
+	MessageTypeOnButtonSingleOrDoubleClick = 10;
+	MessageTypeOnButtonSingleOrDoubleClickOrHold = 11;
+	MessageTypeOnButtonBatteryStatus = 12;
+	MessageTypeOnButtonRssiValue = 13;
+	MessageTypeOnButtonForgotten = 14;
+	MessageTypeOnBluetoothStateChanged = 15;
+	MessageTypeConnectButton = 16;
+	MessageTypeDisconnectButton = 17;
+	MessageTypeStartScan = 18;
+	MessageTypeOnStartedScanning = 19;
+	MessageTypeStopScan = 20;
+	MessageTypeOnStoppedScanning = 21;
+    }
+    required MessageType type = 1;
+    required bytes data = 2;
+}
+
+message Button {
+    enum ButtonState {
+	ButtonStateConnecting = 1;
+	ButtonStateConnected = 2;
+	ButtonStateReady = 3;
+	ButtonStateDisconnecting = 4;
+	ButtonStateDisconnected = 5;
+    }
+    
+    required string deviceId = 1;
+    required string name = 2;
+    required ButtonState buttonState = 3;   
+}
+
+message Manager {
+    required bool bluetoothState = 1;
+    required bool scanning = 2;
+}
+
+message Meta {
+    required int32 majorVersion = 2;
+    required int32 minorVersion = 3;
+}
+
+message InitializeClient {
+    required Meta meta = 1;
+    repeated Button buttons = 2;
+    required Manager manager = 3;
+}
+
+message OnButtonDiscover {
+    required Button button = 1;
+    required int32 rssi = 2;
+    required bool isPrivateMode = 3;
+}
+
+message OnBluetoothStateChanged {
+    required bool state = 1;
+}
+
+message OnButtonConnecting {
+    required string deviceId = 1;
+}
+
+message OnButtonConnect {
+    required string deviceId = 1;
+}
+
+message OnButtonReady {
+    required string deviceId = 1;
+}
+
+message OnButtonDisconnecting {
+    required string deviceId = 1;
+}
+
+message OnButtonDisconnect {
+    required string deviceId = 1;
+}
+
+message OnButtonConnectionFail {
+    required string deviceId = 1;
+}
+
+message OnButtonUpOrDown {
+    required string deviceId = 1;
+    required bool queued = 2;
+    required int32 timeDiff = 3;
+    required bool isUp = 4;
+    required bool isDown = 5;
+}
+
+message OnButtonClickOrHold {
+    required string deviceId = 1;
+    required bool queued = 2;
+    required int32 timeDiff = 3;
+    required bool isClick = 4;
+    required bool isHold = 5;
+}
+
+message OnButtonSingleOrDoubleClick {
+    required string deviceId = 1;
+    required bool queued = 2;
+    required int32 timeDiff = 3;
+    required bool isSingleClick = 4;
+    required bool isDoubleClick = 5;
+}
+
+message OnButtonSingleOrDoubleClickOrHold {
+    required string deviceId = 1;
+    required bool queued = 2;
+    required int32 timeDiff = 3;
+    required bool isSingleClick = 4;
+    required bool isDoubleClick = 5;
+    required bool isHold = 6;
+}
+
+message OnButtonBatteryStatus {
+    required string deviceId = 1;
+    required int32 batteryStatus = 2;
+}
+
+message OnButtonRssiValue {
+    required string deviceId = 1;
+    required int32 rssi = 2;
+}
+
+message OnButtonForgotten {
+    required string deviceId = 1;
+}
+
+message ConnectButton {
+    required string deviceId = 1;
+}
+
+message DisconnectButton {
+    required string deviceId = 1;
+}
+
+message StartScan {
+    
+}
+
+message OnScanningStarted {
+
+}
+
+message StopScan {
+
+}
+
+message OnScanningStopped {
+
+}
