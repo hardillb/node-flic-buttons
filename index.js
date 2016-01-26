@@ -59,10 +59,16 @@ var Flic = function(host, port){
 
 	this.socket = net.connect({port: port ? port :5000, host: host ? host : '127.0.0.1'},function(){
 		console.log('connected');
+		flic.emit("online");
 	});
 
 	this.socket.on('end', function(){
 		console.log('disconnected');
+		flic.emit("offline");
+	});
+
+	this.socket.on('error', function(){
+		flic.emit("offline");
 	});
 
 	this.socket.on('data', function(data){
