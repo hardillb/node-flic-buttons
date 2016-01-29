@@ -1,6 +1,6 @@
 {
   "name": "node-flic-buttons",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Node to read events from Shortcut Labs Flic buttons",
   "main": "index.js",
   "scripts": {

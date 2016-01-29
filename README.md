@@ -1,4 +1,4 @@
-##node-flic-buttons##
+##node-flic-buttons
 
 A NodeJS node to interact with the [flic.io][1] BLE buttons.
 
