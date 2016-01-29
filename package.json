@@ -1,6 +1,6 @@
 {
   "name": "node-flic-buttons",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node to read events from Shortcut Labs Flic buttons",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "protobufjs": "~4.1.2"
+  },
+  "repository" :
+  {
+    "type" : "git"
+  , "url" : "https://github.com/hardillb/node-flic-buttons"
   }
 }
