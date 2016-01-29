@@ -1,13 +1,13 @@
 {
   "name": "node-flic-buttons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node to read events from Shortcut Labs Flic buttons",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "flic",
+    "flic.io",
     "ble",
     "buttons"
   ],
