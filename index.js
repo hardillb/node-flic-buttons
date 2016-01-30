@@ -1,4 +1,4 @@
-// Copyright 2015 Benjamin Hardill
+// Copyright 2015-2016 Benjamin Hardill
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ var net = require('net');
 var util = require('util');
 var events = require('events');
 
-var builder = ProtoBuf.loadProtoFile("flic.proto");
+var builder = ProtoBuf.loadProtoFile(__dirname + "/flic.proto");
 
 var Flic = builder.build('flic');
 
